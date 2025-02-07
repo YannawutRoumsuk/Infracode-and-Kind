@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-# nxz-devops-assignment
-Assignment for Devops job
-=======
+
 # NXZ-DEVOPS-ASSIGNMENT
 
 ## How to run backend-app
@@ -26,4 +23,4 @@ Assignment for Devops job
 3. Build `npm run build`
 4. Run the application `npm start`
 5. The application will run on the localhost port 3000
->>>>>>> origin/main
+
