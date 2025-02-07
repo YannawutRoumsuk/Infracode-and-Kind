@@ -22,6 +22,11 @@ app.get("/ready", (req: Request, res: Response) => {
   res.send("readiness ok");
 });
 
+app.get("/success", (req: Request, res: Response) => {
+  console.log("Request received path /success");
+  res.send("success!");
+});
+
 app.listen(port, () => {
   console.log(`Server is Fire at http://0.0.0.0:${port}`);
 });
