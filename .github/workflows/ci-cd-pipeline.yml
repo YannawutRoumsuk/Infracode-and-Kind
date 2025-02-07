@@ -22,12 +22,15 @@ jobs:
           node-version: '22.13.1'
 
       - name: Install dependencies
+        working-directory: ./backend-apps
         run: npm install
 
       - name: Build the application
+        working-directory: ./backend-apps
         run: npm run build
 
       - name: Run the application (Test)
+        working-directory: ./backend-apps
         run: |
           npm start &
           sleep 5
