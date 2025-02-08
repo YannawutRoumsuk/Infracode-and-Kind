@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - main
+    tags:
+      - 'v*'  # Trigger เมื่อมีการสร้าง tag เช่น v1.0.0, v2.1.3
   pull_request:
     branches:
       - main
+    
 
 # testing add /success
 jobs:
@@ -39,3 +42,25 @@ jobs:
           curl -f http://localhost:3000/ready || exit 2
           curl -f http://localhost:3000/success || exit 3   
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # เงื่อนไขให้ Deploy แค่เมื่อสร้าง Tag Version
+    if: startsWith(github.ref, 'refs/tags/v')  
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.10.5
+
+      - name: Initialize Terraform
+        working-directory: ./infra-code
+        run: terraform init
+
+      - name: Apply Terraform to Deploy to Kubernetes
+        working-directory: ./infra-code
+        run: terraform apply -auto-approve
