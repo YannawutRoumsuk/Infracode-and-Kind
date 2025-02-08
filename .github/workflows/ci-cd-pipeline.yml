@@ -8,6 +8,7 @@ on:
     branches:
       - main
 
+# testing add /success
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -36,4 +37,5 @@ jobs:
           sleep 5
           curl -f http://localhost:3000/health || exit 1
           curl -f http://localhost:3000/ready || exit 2
-          curl -f http://localhost:3000/success || exit 3
+          curl -f http://localhost:3000/success || exit 3   
+

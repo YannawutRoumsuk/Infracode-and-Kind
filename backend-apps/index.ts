@@ -22,6 +22,7 @@ app.get("/ready", (req: Request, res: Response) => {
   res.send("readiness ok");
 });
 
+// add fuction 
 app.get("/success", (req: Request, res: Response) => {
   console.log("Request received path /success");
   res.send("success!");
