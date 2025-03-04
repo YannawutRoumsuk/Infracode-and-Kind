@@ -49,6 +49,7 @@ resource "kubernetes_service" "nxz_service" {
     name = "nxz-backend-service"
   }
   spec {
+    type = "NodePort"
     selector = {
       app = "nxz-backend-app"
     }
@@ -57,6 +58,6 @@ resource "kubernetes_service" "nxz_service" {
       target_port = 3000
       node_port   = 30080
     }
-    type = "NodePort"
+    
   }
 }

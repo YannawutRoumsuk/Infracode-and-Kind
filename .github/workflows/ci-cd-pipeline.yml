@@ -61,6 +61,9 @@ jobs:
         working-directory: ./infra-code
         run: terraform init
 
+      
       - name: Apply Terraform to Deploy to Kubernetes
         working-directory: ./infra-code
         run: terraform apply -auto-approve
+
+
