@@ -1,6 +1,6 @@
 
 # README
-=======
+
 This project demonstrates a complete DevOps pipeline setup using Docker, Docker Compose, GitHub Actions, Kubernetes (via KiND), and Terraform.
 
 ## Prerequisites
