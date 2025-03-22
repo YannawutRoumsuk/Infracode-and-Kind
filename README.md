@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # README
+=======
+# NXZ DevOps Assignment
+>>>>>>> 04c0d3dfe0255c9eff13e133e312c4e2eed0b31d
 
 This project demonstrates a complete DevOps pipeline setup using Docker, Docker Compose, GitHub Actions, Kubernetes (via KiND), and Terraform.
 
